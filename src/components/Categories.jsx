@@ -1,23 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 import { cards } from '../constants';
 import styles from '../style';
 import ReactPaginate from 'react-paginate';
 import '../main.css';
+import useAxios from '../hooks/useAxios';
 
 const Categories = () => {
+  const { data, loading, error, fetchData } = useAxios();
   const [pageNumber, setPageNumber] = useState(0);
-
-  const cardsPerPage = 6;
+  const [ships, setShips] = useState([]);
+  const cardsPerPage = 9;
   const pagesVisited = pageNumber * cardsPerPage;
 
-  const displayCards = cards
-    .slice(pagesVisited, pagesVisited + cardsPerPage)
-    .map((card) => {
-      return <Cards key={card.id} {...card} />;
+  const fetchShips = async () => {
+    try {
+      const response = await fetchData('ships');
+      console.log(response);
+      setShips(response);
+    } catch (error) {
+      console.error('Error while fetching ship data:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchShips();
+  }, []);
+
+  console.log(ships);
+
+  const displayCards =
+    ships &&
+    ships.slice(pagesVisited, pagesVisited + cardsPerPage).map((ship) => {
+      return <Cards key={ship.ship_id} shipName={ship.ship_name} />;
     });
 
-  const pageCount = Math.ceil(cards.length / cardsPerPage);
+  const pageCount = Math.ceil(ships.length / cardsPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
@@ -26,7 +44,7 @@ const Categories = () => {
   return (
     <section
       id='clients'
-      className={`${styles.paddingY} ${styles.flexCenter} flex-col relative`}
+      className={`${styles.paddingY} ${styles.flexDesktop} flex-col relative`}
     >
       {/* Todo */}
       <div className='absolute z-0 w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient ' />
