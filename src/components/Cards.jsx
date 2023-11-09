@@ -1,7 +1,19 @@
-import React from 'react';
-import { quotes } from '../assets';
+import React, { useEffect } from 'react';
+import useAxios from '../hooks/useAxios';
 
 const Cards = ({ content, name, title, img }) => {
+  const { data, loading, error, fetchData } = useAxios();
+
+  useEffect(() => {
+    fetchData('capsules')
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
   const myStyle = {
     backgroundImage:
       "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1699453059/rocket_pk4twi.jpg')",

@@ -1,0 +1,128 @@
+[
+  {
+    "first_name": "Akshay",
+    "last_name": "Urankar",
+    "email": "akshayurankar48@gmail.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Emma",
+    "last_name": "Johnson",
+    "email": "emma.johnson@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "Michael",
+    "last_name": "Smith",
+    "email": "michael.smith@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Olivia",
+    "last_name": "Brown",
+    "email": "olivia.brown@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "James",
+    "last_name": "Davis",
+    "email": "james.davis@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Ava",
+    "last_name": "Williams",
+    "email": "ava.williams@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "William",
+    "last_name": "Miller",
+    "email": "william.miller@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Sophia",
+    "last_name": "Jones",
+    "email": "sophia.jones@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "Benjamin",
+    "last_name": "Wilson",
+    "email": "benjamin.wilson@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Mia",
+    "last_name": "Anderson",
+    "email": "mia.anderson@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "Elijah",
+    "last_name": "Taylor",
+    "email": "elijah.taylor@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Charlotte",
+    "last_name": "Brown",
+    "email": "charlotte.brown@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "Liam",
+    "last_name": "Garcia",
+    "email": "liam.garcia@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Amelia",
+    "last_name": "Martinez",
+    "email": "amelia.martinez@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "Lucas",
+    "last_name": "Hernandez",
+    "email": "lucas.hernandez@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Harper",
+    "last_name": "Rodriguez",
+    "email": "harper.rodriguez@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "Mason",
+    "last_name": "Lopez",
+    "email": "mason.lopez@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Evelyn",
+    "last_name": "Gonzalez",
+    "email": "evelyn.gonzalez@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "Logan",
+    "last_name": "Perez",
+    "email": "logan.perez@example.com",
+    "gender": "Male"
+  },
+  {
+    "first_name": "Sofia",
+    "last_name": "Sanchez",
+    "email": "sofia.sanchez@example.com",
+    "gender": "Female"
+  },
+  {
+    "first_name": "Jackson",
+    "last_name": "Torres",
+    "email": "jackson.torres@example.com",
+    "gender": "Male"
+  }
+]
