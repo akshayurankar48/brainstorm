@@ -1,41 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import Cards from './Cards';
+import CapsuleCards from './CapsuleCards';
 import { cards } from '../constants';
 import styles from '../style';
 import ReactPaginate from 'react-paginate';
 import '../main.css';
 import useAxios from '../hooks/useAxios';
 
-const Categories = () => {
+const CapsuleCategories = () => {
   const { data, loading, error, fetchData } = useAxios();
   const [pageNumber, setPageNumber] = useState(0);
-  const [ships, setShips] = useState([]);
-  const cardsPerPage = 9;
+  const [capsules, setCapsules] = useState([]);
+  const cardsPerPage = 6;
   const pagesVisited = pageNumber * cardsPerPage;
 
-  const fetchShips = async () => {
+  const fetchCapsules = async () => {
     try {
-      const response = await fetchData('ships');
-      console.log(response);
-      setShips(response);
+      const response = await fetchData('capsules');
+      setCapsules(response);
     } catch (error) {
-      console.error('Error while fetching ship data:', error);
+      console.error('Error while fetching Capsule data:', error);
     }
   };
 
   useEffect(() => {
-    fetchShips();
+    fetchCapsules();
   }, []);
 
-  console.log(ships);
-
   const displayCards =
-    ships &&
-    ships.slice(pagesVisited, pagesVisited + cardsPerPage).map((ship) => {
-      return <Cards key={ship.ship_id} shipName={ship.ship_name} />;
+    capsules &&
+    capsules.slice(pagesVisited, pagesVisited + cardsPerPage).map((capsule) => {
+      return (
+        <CapsuleCards
+          key={capsule.capsule_serial}
+          capsuleName={capsule.capsule_serial}
+          capsuleDetails={capsule.details}
+        />
+      );
     });
 
-  const pageCount = Math.ceil(ships.length / cardsPerPage);
+  const pageCount = Math.ceil(capsules.length / cardsPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
@@ -80,4 +83,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default CapsuleCategories;

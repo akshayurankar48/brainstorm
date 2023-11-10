@@ -12,9 +12,11 @@ import {
   CTA,
   Footer,
 } from './components';
-import Categories from './components/Categories';
-import SearchText from './components/SearchText';
+
 import MyTabs from './components/MyTabs';
+import SearchBar from './components/SearchBar';
+import ShipCategories from './components/ShipCategories';
+import CapsuleCategories from './components/CapsuleCategories';
 
 const App = () => (
   <div className='bg-primary w-full overflow-hidden'>
@@ -33,8 +35,15 @@ const App = () => (
     <div className={` bg-primary ${styles.paddingX} ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Stats />
-        <MyTabs />
-        <Categories />
+        <div className='flex items-center justify-center flex-1 mx-auto w-full space-x-48 '>
+          <SearchBar />
+          {/* <div className='pt-[20vh] w-[40%] m-auto flex flex-col items-center min-w-[200px]'>
+            
+          </div> */}
+          <MyTabs />
+        </div>
+        <ShipCategories />
+        <CapsuleCategories />
         {/* <Business /> */}
         {/* <Billing /> */}
         {/* <CardDeal /> */}
@@ -45,9 +54,6 @@ const App = () => (
       </div>
     </div>
   </div>
-  // <div>
-  //   <SearchText />
-  // </div>
 );
 
 export default App;

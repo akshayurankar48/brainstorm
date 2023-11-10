@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import useAxios from '../hooks/useAxios';
 
-const Cards = ({ shipName }) => {
+const ShipCards = ({ shipName, shipImage }) => {
   const { data, loading, error, fetchData } = useAxios();
 
   const myStyle = {
-    backgroundImage:
-      "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1699453059/rocket_pk4twi.jpg')",
-
+    backgroundImage: `url(${shipImage})`,
     fontSize: '50px',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -16,14 +14,18 @@ const Cards = ({ shipName }) => {
   return (
     <div
       style={myStyle}
-      className='flex justify-between flex-col px-10 py-12 rounded-[20px]  max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-6 '
+      className='flex justify-between flex-col px-10 py-12 rounded-[20px]  max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-6 cursor-pointer'
     >
       <p className='font-poppins font-normal text-[18px] leading-[32px] text-white my-10  '>
         {shipName}
       </p>
 
       <div className='flex flex-row'>
-        {/* <img src={img} alt={name} className='w-[48px] h-[48px] rounded-full ' /> */}
+        {/* <img
+          src={shipImage}
+          alt={name}
+          className='w-[48px] h-[48px] rounded-full '
+        /> */}
 
         <div className='flex flex-col ml-4'>
           {/* {shipNames.map((name, index) => (
@@ -44,4 +46,4 @@ const Cards = ({ shipName }) => {
   );
 };
 
-export default Cards;
+export default ShipCards;
